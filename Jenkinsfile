@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Maven build') {
             steps {
-                 sh 'mvn -s /home/jenkins/.m2/settings.xml -U clean install -Dmaven.test.skip=true'
+                 sh 'mvn -s /home/jenkins/.m2/settings.xml -U clean install -Dmaven.test.skip=true -P server'
             }
         }
         stage("Docker build") {
